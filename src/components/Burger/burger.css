@@ -1,0 +1,7 @@
+.burger {
+    width:500px;
+    height: 500px;
+    z-index: 300;
+    margin: 0 auto;
+    background: dimgray;
+}
