@@ -20,8 +20,11 @@ class BuildControls extends Component {
             label={ct.label} 
             added={() => this.props.addControlMore(ct.type)}
             removed={() => this.props.addControlLess(ct.type)}
+            totalPr={this.props.total}
             />
         ))}
+        <div>Total price: {this.props.total}</div>
+        <button onClick={this.props.modalOrder}>ORDER NOW</button>
       </div>
     );
   }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Burger from '../components/Burger/burger'
 import BuildControls from '../components/BuildControls/buildcontrols'
+import Modal from '../components/Modal/modal'
+import Backdrop from '../components/Modal/backdrop'
 
 const INGREDIENT_PRICES = {
   salad: 0.2,
@@ -8,6 +10,7 @@ const INGREDIENT_PRICES = {
   cheese: 0.2,
   meat: 0.3
 };
+
 
 class BurgerBuilder extends Component {
   state = {
@@ -18,6 +21,7 @@ class BurgerBuilder extends Component {
       meat: 1
     },
     totalPrice: 2.2,
+    purchasing: false
   };
 
 
@@ -55,19 +59,45 @@ class BurgerBuilder extends Component {
       })
     }
 
+    showModal = () => {
+      this.setState({
+        purchasing: true
+      })
+    }
+
+    closeModal = () => {
+      this.setState({
+        purchasing: false
+      })
+    }
+
 
   render() {
     return (
       <div>
-        Burger builder
-        <Burger ingredients={this.state.ingredients}/>
-        <BuildControls 
-        addControlMore={this.addHandlerMore}
-        addControlLess={this.addHandlerLess}
-        />
+        <Modal 
+        close={this.closeModal}
+        show={this.state.purchasing}/>
+        <div style={container}>
+          <Burger ingredients={this.state.ingredients}/>
+          <BuildControls 
+          modalOrder={this.showModal}
+          addControlMore={this.addHandlerMore}
+          addControlLess={this.addHandlerLess}
+          total={this.state.totalPrice.toFixed(2)}
+          />
+        </div>
+        
       </div>
     )
   }
 }
+
+const container = {
+  height: '100vh',
+  backgroundColor: '#fff',
+  width: '70%',
+  marginLeft: '15%'
+};
 
 export default BurgerBuilder;

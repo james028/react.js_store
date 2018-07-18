@@ -6,3 +6,10 @@
     background: dimgray;
     overflow-y: scroll;
 }
+
+@media (max-width: 550px) {
+    .burger {
+        width: 100%;
+        height: 380px;
+    }
+}
