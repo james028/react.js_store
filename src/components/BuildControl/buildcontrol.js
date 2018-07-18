@@ -4,8 +4,10 @@ import './buildcontrol.css'
 const BuildControl = (props) => (
     <div className="build-control">
         <div>{props.label}</div>
-        <button>Less</button>
-        <button>More</button>
+        <div>
+            <button className="button-less" onClick={props.removed}>Less</button>
+            <button className="button-more" onClick={props.added}>More</button>
+        </div>
     </div>
 )
 

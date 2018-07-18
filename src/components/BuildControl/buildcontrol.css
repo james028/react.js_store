@@ -1,5 +1,45 @@
 .build-control {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding: 10px 0;
+    width: 250px;
+    margin: 0 auto;
+}
+.button-less{
+    background-color: #f14e4e;
+    display: inline-block;
+    padding: 0.3em 1.2em;
+    margin: 0 0.1em 0.1em 0;
+    border: 0.16em solid rgba(255,255,255,0);
+    border-radius: 25px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight: 400;
+    color: #fff;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align: center;
+    transition: all 0.2s;
+    margin-right: 20px;
+    }
+    .button-less:hover{
+    border-color: rgba(255,255,255,1);
+}
+
+.button-more {
+    background-color: #84f14e;
+    display: inline-block;
+    padding: 0.3em 1.2em;
+    margin: 0 0.1em 0.1em 0;
+    border: 0.16em solid rgba(255,255,255,0);
+    border-radius: 25px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight: 400;
+    color: #fff;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align: center;
+    transition: all 0.2s;
+    }
+    .button-more:hover{
+    border-color: rgba(255,255,255,1);
 }

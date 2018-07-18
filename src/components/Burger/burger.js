@@ -6,7 +6,7 @@ class Burger extends Component {
   render() {
       let transformParts = Object.keys(this.props.ingredients)
         .map((id) => {
-          return [...Array(this.props.ingredients[id])].map(( _, i) => {
+          return [...Array(this.props.ingredients[id]) ].map(( _, i) => {
             return <BurgerIng key={id + i} type={id} />
           });
         })

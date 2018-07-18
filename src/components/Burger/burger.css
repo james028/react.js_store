@@ -4,4 +4,5 @@
     z-index: 300;
     margin: 0 auto;
     background: dimgray;
+    overflow-y: scroll;
 }

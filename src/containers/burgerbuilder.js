@@ -2,6 +2,13 @@ import React, { Component } from 'react'
 import Burger from '../components/Burger/burger'
 import BuildControls from '../components/BuildControls/buildcontrols'
 
+const INGREDIENT_PRICES = {
+  salad: 0.2,
+  bacon: 0.3,
+  cheese: 0.2,
+  meat: 0.3
+};
+
 class BurgerBuilder extends Component {
   state = {
     ingredients: {
@@ -10,13 +17,54 @@ class BurgerBuilder extends Component {
       cheese: 1,
       meat: 1
     },
+    totalPrice: 2.2,
   };
+
+
+
+  addHandlerMore = (e) => {
+      const oldCount = this.state.ingredients[e];
+      const updateCount = oldCount + 1;
+      const updatedIncredients = {
+        ...this.state.ingredients
+      };
+      updatedIncredients[e] = updateCount;
+      const priceAddition = INGREDIENT_PRICES[e];
+      const oldPrice = this.state.totalPrice;
+      const newPrice = oldPrice + priceAddition;
+      this.setState({
+        totalPrice: newPrice,
+        ingredients: updatedIncredients
+      })
+        //this.updatePurchaseState(updatedIncredients);
+    }
+
+    addHandlerLess = (e) => {
+      const oldCount = this.state.ingredients[e];
+      const updateCount = oldCount - 1;
+      const updatedIncredients = {
+        ...this.state.ingredients
+      };
+      updatedIncredients[e] = updateCount;
+      const priceAddition = INGREDIENT_PRICES[e];
+      const oldPrice = this.state.totalPrice;
+      const newPrice = oldPrice + priceAddition;
+      this.setState({
+        totalPrice: newPrice,
+        ingredients: updatedIncredients
+      })
+    }
+
+
   render() {
     return (
       <div>
         Burger builder
         <Burger ingredients={this.state.ingredients}/>
-        <BuildControls />
+        <BuildControls 
+        addControlMore={this.addHandlerMore}
+        addControlLess={this.addHandlerLess}
+        />
       </div>
     )
   }
