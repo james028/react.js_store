@@ -23,8 +23,8 @@ class BuildControls extends Component {
             totalPr={this.props.total}
             />
         ))}
-        <div>Total price: {this.props.total}</div>
-        <button onClick={this.props.modalOrder}>ORDER NOW</button>
+        <div className="total-price">Total price: {this.props.total}</div>
+        <button className="btn-order" onClick={this.props.modalOrder}>ORDER NOW</button>
       </div>
     );
   }

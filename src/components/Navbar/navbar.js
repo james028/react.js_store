@@ -21,7 +21,13 @@ class Navbar extends Component {
         {navbarleft}
         {backdropleft}
         <div className="navbar">
-          <div onClick={this.props.show}>LOGO</div>
+          <div onClick={this.props.show} className="btn-navbar">
+            <button className="toggle-button">
+                <div className="toggle-button__line" />
+                <div className="toggle-button__line" />
+                <div className="toggle-button__line" />
+            </button>
+          </div>
           <nav>
               <ul>
                   <li><a href="/"></a>Homepage</li>

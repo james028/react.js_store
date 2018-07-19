@@ -1,10 +1,10 @@
 .burger {
     width:500px;
-    height: 500px;
+    height: 400px;
     z-index: 300;
     margin: 0 auto;
-    background: dimgray;
     overflow-y: scroll;
+    padding: 25px 10px 15px;
 }
 
 @media (max-width: 550px) {

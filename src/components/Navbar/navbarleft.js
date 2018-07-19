@@ -2,13 +2,13 @@ import React from 'react'
 
 const NavbarLeft = (props) => (
     <div style={navbarleft}>
+    <div onClick={props.closeLeft}>X</div>
         <nav>
             <ul>
                 <li><a href="/">Homepage</a></li>
                 <li><a href="/">Orders</a></li>
             </ul>
         </nav>
-        <div onClick={props.closeLeft}>X</div>
     </div>
 )
 export default NavbarLeft;
