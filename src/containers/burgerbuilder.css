@@ -1,0 +1,6 @@
+.builder-container {
+    display: flex;
+}
+.builder-flex {
+    flex: 0 0 50%;
+}
